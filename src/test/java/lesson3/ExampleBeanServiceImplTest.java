@@ -2,9 +2,7 @@ package lesson3;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,12 +20,15 @@ class ExampleBeanServiceImplTest {
     void sampleMethod() {
 
         //given
-        Mockito.when(injectedBeanService.anotherSampleMethod()).thenReturn(true);
+        Mockito.when(injectedBeanService.anotherSampleMethod(ArgumentMatchers.any())).thenReturn("my value");
 
         //When
-        boolean result = exampleBeanService.sampleMethod();
+        String result = exampleBeanService.sampleMethod("val1");
+        String result2 = exampleBeanService.sampleMethod("val2");
+        String result3 = exampleBeanService.sampleMethod("val3");
         //then
-        assertTrue(result);
+        assertEquals ("my value",result);
+        assertEquals ("my value",result2);
 
     }
 

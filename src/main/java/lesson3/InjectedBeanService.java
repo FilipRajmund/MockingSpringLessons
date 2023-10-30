@@ -1,5 +1,5 @@
 package lesson3;
 
 public interface InjectedBeanService {
-    boolean anotherSampleMethod();
+    String anotherSampleMethod(String anyword);
 }

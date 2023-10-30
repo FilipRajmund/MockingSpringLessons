@@ -2,7 +2,7 @@ package lesson3;
 
 public class InjectedBeanServiceImpl implements InjectedBeanService{
     @Override
-    public boolean anotherSampleMethod() {
-        return false;
+    public String anotherSampleMethod(String anywords) {
+        return "some value: " + anywords;
     }
 }

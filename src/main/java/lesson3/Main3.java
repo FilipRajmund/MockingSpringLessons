@@ -5,6 +5,6 @@ public class Main3 {
         InjectedBeanServiceImpl injectedBeanService = new InjectedBeanServiceImpl();
         ExampleBeanService exampleBeanService = new ExampleBeanServiceImpl();
         exampleBeanService.setIncectedBeanService(injectedBeanService);
-        System.out.println(exampleBeanService.sampleMethod());
+        System.out.println(exampleBeanService.sampleMethod("ArgumentMatchersLearning"));
     }
 }
